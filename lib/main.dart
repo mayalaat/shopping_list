@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/MainScreens/welcomeScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +13,6 @@ class MyApp extends StatelessWidget {
           primaryColor: Color(0xff8041b2),
           primaryColorDark: Color(0xffb26fe5),
           primaryColorLight: Color(0xff4f1182),
-          accentColor: Color(0xffc681ff),
           //backgroundColor: Color(0xffffffff),
 
           visualDensity: VisualDensity.adaptivePlatformDensity),
@@ -29,9 +29,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Center(),
-    );
+    return WelcomeScreen();
   }
 }
