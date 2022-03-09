@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:shopping_list/MainScreens/homeScreen.dart';
 import 'package:shopping_list/Utils/TextApp.dart';
 import 'package:shopping_list/Widgets/Components/Containers/ContainerShape.dart';
@@ -61,6 +62,17 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
+  Widget _signInButton() {
+    return Container(
+      margin: EdgeInsets.only(top: 10, bottom: 10),
+      width: double.infinity,
+      child: SignInButton(
+        Buttons.Google,
+        onPressed: () {},
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -85,7 +97,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: _emailPasswordWidget(),
                   ),
                   _forgotPassword(),
-                  _divider()
+                  _divider(),
+                  _signInButton()
                 ],
               ),
             )
