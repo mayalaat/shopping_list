@@ -27,4 +27,18 @@ class Designwidgets {
                   style: GoogleFonts.lato(color: Colors.white, fontSize: 30))
             ]));
   }
+
+  static RichText titleDark() {
+    return RichText(
+        textAlign: TextAlign.center,
+        text: TextSpan(
+            text: 'Shopping',
+            style: GoogleFonts.portLligatSans(
+                fontSize: 30, fontWeight: FontWeight.w700, color: Colors.grey),
+            children: [
+              TextSpan(
+                  text: "List",
+                  style: GoogleFonts.lato(color: Colors.black, fontSize: 30))
+            ]));
+  }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/MainScreens/login/loginScreen.dart';
 import 'package:shopping_list/Utils/TextApp.dart';
 import 'package:shopping_list/Widgets/Desing/DesignWidgets.dart';
 
@@ -42,7 +43,8 @@ Widget _loginButton(BuildContext context) {
     child: ElevatedButton(
         style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all<Color>(Colors.white)),
-        onPressed: () => print("Init session"),
+        onPressed: () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => LoginScreen())),
         child: Text(
           TextApp.LOGIN,
           style: TextStyle(
