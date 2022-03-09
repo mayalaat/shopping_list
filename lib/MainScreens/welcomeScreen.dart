@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/MainScreens/login/loginScreen.dart';
 import 'package:shopping_list/Utils/TextApp.dart';
+import 'package:shopping_list/Widgets/Components/Buttons/mySignInButton.dart';
 import 'package:shopping_list/Widgets/Desing/DesignWidgets.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -26,7 +27,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Designwidgets.title(),
-              _loginButton(context),
+              MySignInButton(
+                  Theme.of(context).primaryColor,
+                  MaterialStateProperty.all<Color>(Colors.white),
+                  LoginScreen()),
               _signUpButton(context)
             ],
           ),
@@ -34,26 +38,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       ),
     );
   }
-}
-
-Widget _loginButton(BuildContext context) {
-  return Container(
-    padding: EdgeInsets.only(top: 50.0, bottom: 25),
-    width: double.infinity,
-    child: ElevatedButton(
-        style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color>(Colors.white)),
-        onPressed: () => Navigator.push(
-            context, MaterialPageRoute(builder: (context) => LoginScreen())),
-        child: Text(
-          TextApp.LOGIN,
-          style: TextStyle(
-              color: Theme.of(context).primaryColor,
-              letterSpacing: 1.5,
-              fontSize: 18.0,
-              fontWeight: FontWeight.bold),
-        )),
-  );
 }
 
 Widget _signUpButton(BuildContext context) {
