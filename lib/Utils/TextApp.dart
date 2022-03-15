@@ -7,4 +7,6 @@ class TextApp {
   static const String PASSWORD = "Password";
   static const String FORGOT_PASSWORD = "Forgot password?";
   static const String OR = "o";
+  static const String NEW_ACCOUNT = "New to ShoppingList?";
+  static const String CREATE_ACCOUNT = "Create an account";
 }

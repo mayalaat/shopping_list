@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:shopping_list/MainScreens/homeScreen.dart';
+import 'package:shopping_list/MainScreens/login/signUp.dart';
 import 'package:shopping_list/Utils/TextApp.dart';
 import 'package:shopping_list/Widgets/Components/Containers/ContainerShape.dart';
 import 'package:shopping_list/Widgets/Components/Containers/Fields/myFieldForm.dart';
@@ -73,6 +74,31 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
+  Widget _signInLabel() {
+    return TextButton(
+        onPressed: () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => SignUp())),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              TextApp.NEW_ACCOUNT,
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Text(
+              TextApp.CREATE_ACCOUNT,
+              style: TextStyle(
+                  color: Theme.of(context).primaryColorDark,
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600),
+            ),
+          ],
+        ));
+  }
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -86,20 +112,23 @@ class _LoginScreenState extends State<LoginScreen> {
               height: double.infinity,
               width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: height * .15),
-                    child: Designwidgets.titleDark(),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: height * .05),
-                    child: _emailPasswordWidget(),
-                  ),
-                  _forgotPassword(),
-                  _divider(),
-                  _signInButton()
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(top: height * .15),
+                      child: Designwidgets.titleDark(),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: height * .05),
+                      child: _emailPasswordWidget(),
+                    ),
+                    _forgotPassword(),
+                    _divider(),
+                    _signInButton(),
+                    _signInLabel(),
+                  ],
+                ),
               ),
             )
           ],
